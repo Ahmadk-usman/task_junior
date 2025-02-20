@@ -43,16 +43,13 @@ DB_PASSWORD=
 ### 4. Generate Key & Jalankan Migrasi
 
 ```sh
-php artisan key:generate
 php artisan migrate
 ```
 
-### 5. Install Laravel Sanctum
-
+### 5. Db seeder
 ```sh
-composer require laravel/sanctum
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-php artisan migrate
+php artisan db:seed
+
 ```
 
 Tambahkan middleware di `app/Http/Kernel.php`:
@@ -79,19 +76,9 @@ php artisan serve
 
 API ini menggunakan **Laravel Sanctum** untuk autentikasi berbasis token.
 
-### **1️⃣ Register User**
 
-**Endpoint:** `POST /api/register`
 
-```json
-{
-    "name": "User Baru",
-    "email": "user@example.com",
-    "password": "password123"
-}
-```
-
-### **2️⃣ Login User**
+### **1 Login User**
 
 **Endpoint:** `POST /api/login`
 
@@ -112,7 +99,7 @@ API ini menggunakan **Laravel Sanctum** untuk autentikasi berbasis token.
 
 Gunakan **Bearer Token** untuk API yang membutuhkan autentikasi.
 
-### **3️⃣ Logout User**
+### **3 Logout User**
 
 **Endpoint:** `POST /api/logout`
 
