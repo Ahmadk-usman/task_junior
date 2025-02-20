@@ -52,17 +52,6 @@ php artisan db:seed
 
 ```
 
-Tambahkan middleware di `app/Http/Kernel.php`:
-
-```php
-protected $middlewareGroups = [
-    'api' => [
-        \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-        'throttle:api',
-        \Illuminate\Routing\Middleware\SubstituteBindings::class,
-    ],
-];
-```
 
 ### 6. Jalankan Server
 
